@@ -1,0 +1,8 @@
+sentencepiece
+torch
+transformers
+
+langchain
+
+uvicorn
+fastapi
