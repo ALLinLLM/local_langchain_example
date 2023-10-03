@@ -54,9 +54,9 @@ most_simliar_doc = match_result[0][1]
 prompt_query = f"请根据content标签的内容，回答用户的提问query。\n<content>{most_simliar_doc.page_content}</content>\n<query>{user_query}</query>"
 print()
 print(">>> 原始输入:", user_query)
-outputs = model.chat(tokenizer, user_query)
-print(">>> 大模型的回复：", outputs)
+answer, history = model.chat(tokenizer, user_query)
+print(">>> 大模型的回复：", answer)
 print("=" * 20)
 print(">>> 拼接后的输入:", prompt_query)
-outputs = model.chat(tokenizer, prompt_query)
-print(">>> 大模型的回复：", outputs)
+answer, history = model.chat(tokenizer, prompt_query)
+print(">>> 大模型的回复：", answer)
