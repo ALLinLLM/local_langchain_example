@@ -1,10 +1,11 @@
-# local_langchain_demo
-学习如何本地部署langchain大模型
+# 🚀local_langchain_demo🚀
+本项目拆解了一个基于[🦜🔗LangChain](https://www.langchain.com/)框架的**本地**大模型聊天APP
+所有内容都有配套代码和注释，用自底向上的方式对APP的关键功能进行讲解，最后用搭积木的方式实现最终的APP。
 
 
 硬件要求：
-1. 显卡 ≥ 3090，目前实测 3090 和 4090 可以正常运行ChatGLM-6B
-
+1. 🖥️ 显卡 ≥ 3090，目前实测 3090 和 4090 可以正常运行ChatGLM-6B
+2. 🌐 网络情况良好，可以正常使用 huggingface 和 github
 
 ---
 
@@ -53,3 +54,9 @@ python embedding_and_similarity.py
 ```
 输出每句话的向量前5个值，以及两两之间的cos相似度：
 ![输出](doc/img/example3.png)
+
+
+---
+
+### 拓展阅读
+1. 一个使用langchain框架，有前端页面，能够进行本地文档问答，web搜索问答，知识库管理功能的智能聊天系统： https://github.com/chatchat-space/Langchain-Chatchat
