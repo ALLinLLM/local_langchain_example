@@ -2,6 +2,7 @@ from langchain.llms import ChatGLM
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.prompts.chat import ChatPromptTemplate, HumanMessagePromptTemplate
+
 template = """{question}"""
 prompt = PromptTemplate(template=template, input_variables=["question"])
 
