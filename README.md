@@ -34,3 +34,22 @@ python llm_api_server.py
 cd 2.langchain_demo
 python langchain_demo.py
 ```
+
+## 3. embedding and similarity
+学习目标：掌握把文本转换成一组浮点数向量的过程，并且计算两个句子的向量相似度。后续基于pdf的本地大模型问答会用到。
+操作步骤：
+1. 下载智源研究院的embedding模型：https://huggingface.co/BAAI/bge-large-zh
+号称目前中文最强，针对聊天场景有优化，详情参考官方微信公号文章：https://mp.weixin.qq.com/s/J8mG-J5KLkkWr6fQnkscZw
+下载时使用ssh方式，并加上`--depth 1`命令行选项，避免拷贝全量git历史记录加速下载。如果服务器的网络不好，还是下载失败，建议先使用可以上网的机器下载好，再用ftp软件比如filezilla传到服务器上。
+`
+git clone --depth 1 git@hf.co:BAAI/bge-large-zh /share/public/huggingface_cache/BAAI/bge-large-zh
+`
+
+2. 依次执行下列代码，观察输出：
+```python
+cd 3.embedding_and_similarity
+pip install -r requirements.txt
+python embedding_and_similarity.py
+```
+输出每句话的向量前5个值，以及两两之间的cos相似度：
+![输出](doc/img/example3.png)

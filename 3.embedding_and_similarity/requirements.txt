@@ -1,0 +1,6 @@
+sentencepiece
+sentence-transformers
+torch
+transformers
+
+langchain
