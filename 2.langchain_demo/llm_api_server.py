@@ -70,6 +70,6 @@ def main():
     global app
     uvicorn.run(app, host="0.0.0.0", port=10000, workers=1)
 
-
+# 程序运行的入口
 if __name__ == "__main__":
     main()

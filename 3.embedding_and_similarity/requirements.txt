@@ -3,4 +3,4 @@ sentence-transformers
 torch
 transformers
 
-langchain
+langchain==0.0.305
