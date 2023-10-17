@@ -47,7 +47,7 @@ def preprocess(file_path):
     docs.append(doc)
     return docs
 
-
+# 程序运行的入口
 if __name__ == "__main__":
     file_path = "doc_example.txt"
 

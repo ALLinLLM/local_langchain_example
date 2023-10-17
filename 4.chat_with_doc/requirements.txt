@@ -3,4 +3,8 @@ sentence-transformers
 torch
 transformers
 
-langchain
+langchain==0.0.305
+
+# 如果是24GB显存，跑大模型和embedding已经很紧张，向量库可以用cpu；否则，可以用gpu版本
+faiss-cpu==1.7.4
+# faiss-gpu==1.7.2  

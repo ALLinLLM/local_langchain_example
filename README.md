@@ -1,15 +1,22 @@
 # 🚀langchain本地大模型应用实践🚀
 本项目拆解了一个基于[🦜🔗LangChain](https://www.langchain.com/)框架的**本地**大模型聊天APP
-所有内容都有配套代码和注释，用自底向上的方式对APP的关键功能进行讲解，最后用搭积木的方式实现最终的APP。
 
+网上langchain的教程和项目汗牛充栋，为什么还需要重复造轮子呢？
+
+本项目的优势如下：
+1. 所有内容都有配套代码和注释；
+2. 用自底向上的方式对APP的关键功能进行讲解，最后用搭积木的方式实现最终的APP；
+3. 强调低成本入门，可以在免费的云计算平台上跑通例子；
+---
 
 硬件要求：
-1. 🖥️ 显卡 ≥ 3090，目前实测 3090 和 4090 可以正常运行ChatGLM-6B
+1. 🖥️ 显卡 ≥ 3090，目前实测 3090 和 4090 可以正常运行ChatGLM-6B。没有高算力显卡的同学，建议看下免费的启智社区-AI协作平台：https://openi.pcl.ac.cn
 2. 🌐 网络情况良好，可以正常使用 huggingface 和 github
 
 软件要求：
-1. 操作系统：本项目在 Ubuntu 20.04.1 x86_64 (5.15.0-76-generic 内核) 系统下通过测试，其他系统的兼容性问题请提 issue
-2. python：本项目在 python 3.10 下通过测试。注：目前（2023-10）官方已经不再支持 python 3.7及以前版本。参考：https://devguide.python.org/versions/
+1. 操作系统：在 Ubuntu 20.04 x86_64 下通过测试，系统兼容性问题请提 issue
+2. python：在 python 3.10 下通过测试。注：多家大厂已经不再支持 python 3.7。python版本的维护周期参考：https://devguide.python.org/versions/
+3. langchain：api随版本变化很大，建议安装requirements.txt中指定的版本。
 
 ---
 
@@ -87,6 +94,13 @@
     ```
     ====分割线上方是没有拼接本地文档片段的回复，下方是拼接后的回复，可以看到，回复的准确率显著提高！
     ![输出](doc/img/example4_3.png)
+4. 上面搜索向量用的是笨办法，但是生产环境，面对上百万的向量，肯定不能满足实时聊天的要求。所以，我们还是需要使用一款自带向量搜索引擎的开源向量库。目前比较主流的向量库有脸书家的FAISS 和 milvus。本教程用的是FAISS。使用了索引，可以在毫秒级别，搜索上亿的向量。
+    ```python
+    python _4_use_vector_db.py
+    ```
+    输出如下，可以看到通过FAISS向量搜索，能够找出和用户提问最匹配的章节：
+    
+    ![输出](doc/img/example4_chat_with_doc_use_vector_db.png)
 
 
 ---
