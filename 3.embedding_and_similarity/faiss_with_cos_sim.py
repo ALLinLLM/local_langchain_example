@@ -1,25 +1,27 @@
 import numpy as np
 from langchain.embeddings import HuggingFaceEmbeddings
 
-local_dir = "/share/public/huggingface_cache/"
-# 这里可以替换任意中文词向量模型
-model_name = "BAAI/bge-large-zh"
+# 这里替换成你自己的词向量模型文件夹路径
+local_model_dir = "/share/public/huggingface_cache/BAAI/bge-large-zh"
 
+# 如果没有显卡，将下面这句话注释
 model_kwargs = {"device": "cuda:0"}
+
+# 是否需要将模型输出再做一次归一化。对于bge模型来说，输出本身就是单位向量，不需要。
 encode_kwargs = {"normalize_embeddings": False}
-print(f"loading embedding model {model_name}...")
+print(f"loading embedding model {local_model_dir}...")
 hf_embedding_model = HuggingFaceEmbeddings(
-    model_name=local_dir + model_name,
+    model_name=local_model_dir,
     model_kwargs=model_kwargs,
     encode_kwargs=encode_kwargs,
 )
-print(f"embedding model {model_name} loaded")
+print(f"embedding model {local_model_dir} loaded")
 text1 = "我正在使用大模型帮助我写作"
 text2 = "我经常使用大模型"
 text3 = "我爱骑自行车"
 
 
-print(f"验证{model_name}词向量模型生成的向量长度为1，是单位向量:")
+print(f"验证{local_model_dir}词向量模型生成的向量长度为1，是单位向量:")
 vector1 = hf_embedding_model.embed_query(text1)
 print(text1, np.linalg.norm(vector1))
 vector2 = hf_embedding_model.embed_query(text2)

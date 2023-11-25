@@ -1,12 +1,13 @@
 from langchain.embeddings import HuggingFaceEmbeddings
 
-local_dir = "/share/public/huggingface_cache/"
-model_name = "BAAI/bge-large-zh"
+# 这里替换成你自己的词向量模型文件夹路径
+local_model_dir = "/share/public/huggingface_cache/BAAI/bge-large-zh"
+# 如果没有显卡，将下面这句话注释
 model_kwargs = {"device": "cuda:0"}
 encode_kwargs = {"normalize_embeddings": False}
 print("loading embedding model...")
 hf = HuggingFaceEmbeddings(
-    model_name=local_dir + model_name,
+    model_name=local_model_dir,
     model_kwargs=model_kwargs,
     encode_kwargs=encode_kwargs,
 )

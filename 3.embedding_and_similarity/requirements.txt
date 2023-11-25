@@ -1,6 +1,11 @@
-sentencepiece
-sentence-transformers
-torch
-transformers
+# 主流向量库
+faiss-cpu==1.7.4
 
+# 大模型主流框架
 langchain==0.0.250
+
+# python主流推理框架，用于跑词向量模型
+torch >= 2.0.1
+sentencepiece==2.2.2
+sentence-transformers
+transformers
