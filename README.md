@@ -1,4 +1,4 @@
-# 🚀langchain本地大模型应用实践🚀
+# 零成本的langchain本地大模型应用实践🚀
 本项目拆解了一个基于[🦜🔗LangChain](https://www.langchain.com/)框架的**本地**大模型聊天APP
 
 网上langchain的教程和项目汗牛充栋，为什么还需要重复造轮子呢？
@@ -7,16 +7,17 @@
 1. 所有内容都有配套代码和注释；
 2. 用自底向上的方式对APP的关键功能进行讲解，最后用搭积木的方式实现最终的APP；
 3. 强调低成本入门，可以在免费的云计算平台上跑通例子；
+4. 国内开发友好，尽量使用国内的魔搭大模型社区
 ---
 
 硬件要求：
-1. 🖥️ 显卡 ≥ 3090，目前实测 3090 和 4090 可以正常运行ChatGLM-6B。没有高算力显卡的同学，建议看下免费的启智社区-AI协作平台：https://openi.pcl.ac.cn
-2. 🌐 网络情况良好，可以正常使用 huggingface 和 github
+1. 🖥️ 部分教程需要显卡 ≥ 3090，目前实测 3090可以正常运行ChatGLM-6B。没有高算力显卡的同学，建议看下免费的启智社区-AI协作平台：https://openi.pcl.ac.cn
+
 
 软件要求：
 1. 操作系统：在 Ubuntu 20.04 x86_64 下通过测试，系统兼容性问题请提 issue
 2. python：在 python 3.10 下通过测试。注：多家大厂已经不再支持 python 3.7。python版本的维护周期参考：https://devguide.python.org/versions/
-3. langchain：api随版本变化很大，建议安装requirements.txt中指定的版本。
+3. langchain：api随版本变化很大，建议安装每个章节requirements.txt中指定的版本。
 
 ---
 
@@ -102,6 +103,7 @@
     
     ![输出](doc/img/example4_chat_with_doc_use_vector_db.png)
 
+## 5. 训练你自己的大模型
 
 ---
 
