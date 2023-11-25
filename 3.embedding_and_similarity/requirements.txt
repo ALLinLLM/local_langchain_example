@@ -6,6 +6,6 @@ langchain==0.0.250
 
 # python主流推理框架，用于跑词向量模型
 torch >= 2.0.1
-sentencepiece==2.2.2
-sentence-transformers
-transformers
+sentencepiece==0.1.99
+sentence-transformers==2.2.2
+transformers==4.33.3
