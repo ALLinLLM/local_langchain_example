@@ -61,11 +61,10 @@ def get_index_docs(title, text):
 
 def create_vector_database(docs, embedding):
     """
-    默认用欧式距离，但是nlp的词向量更主流的度量函数是cos相似度
+    默认用欧式距离，但是nlp的词向量更主流的度量函数是cos相似度. 这里需要langchain版本支持，至少大于0.0.250
     """
     from langchain.vectorstores.utils import DistanceStrategy
-    faiss_vsdb = FAISS.from_documents(docs, embedding, distance_strategy=DistanceStrategy.JACCARD)
-    faiss_vsdb.distance_strategy = DistanceStrategy.JACCARD
+    faiss_vsdb = FAISS.from_documents(docs, embedding, distance_strategy=DistanceStrategy.MAX_INNER_PRODUCT)
     return faiss_vsdb
 
 
